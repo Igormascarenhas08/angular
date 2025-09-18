@@ -1,5 +1,50 @@
-<h1>{{titulo}}</h1>
-
-<ul>
-    <li *ngFor="let professor of professores">{{professor.nome}}</li>
-</ul>
+<div class="row">
+  
+  
+  <div class="col-sm-6" *ngIf="professorSelecionado">
+    <div class="row">
+      <div class="col-sm-9"><app-titulo [titulo] = "'Código:' + professorSelecionado.id"></app-titulo></div>
+      <br>
+      <div class="col-sm-1"><button class="btn btn-danger" (click)="voltar()">Voltar</button></div>
+    </div>
+    
+    <div class="row mb-2">
+      <div class="col-sm-10">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
+        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" [value]="professorSelecionado.nome" placeholder="Digite o nome do professor">
+      </div>
+    </div>
+    
+    <div class="row mb-2">
+      <div class="col-sm-10">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Disciplina</label>
+        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" [value]="professorSelecionado.disciplina" placeholder="Digite a disciplia do professor">
+      </div>
+    </div>
+    
+    <button class="btn btn-success">Enviar</button>
+  </div>
+  
+  <div [ngClass]="{'col-sm-6': professorSelecionado, 'col-sm-12': !professorSelecionado}">
+    <app-titulo [titulo] = 'titulo'></app-titulo>
+    <div class="area-table">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Disciplina</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let professor of professores' style="cursor:pointer" (click)="professorSelected(professor)">
+            <th scope="row">{{professor.id}}</th>
+            <td>{{professor.nome}}</td>
+            <td>{{professor.disciplina}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</div>
