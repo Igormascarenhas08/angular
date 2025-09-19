@@ -1,29 +1,30 @@
 <div class="row">
-  
-  
+
   <div class="col-sm-6" *ngIf="professorSelecionado">
     <div class="row">
       <div class="col-sm-9"><app-titulo [titulo] = "'Código:' + professorSelecionado.id"></app-titulo></div>
-      <br>
-      <div class="col-sm-1"><button class="btn btn-danger" (click)="voltar()">Voltar</button></div>
     </div>
     
-    <div class="row mb-2">
-      <div class="col-sm-10">
-        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
-        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" [value]="professorSelecionado.nome" placeholder="Digite o nome do professor">
+    <form [formGroup]="professorForm" (submit)="professorSubmit()">
+      <div class="row mb-2">
+        <div class="col-sm-10">
+          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
+          <input type="text" class="form-control form-control-sm" formControlName="nome" placeholder="Digite o nome do professor">
+        </div>
       </div>
-    </div>
-    
-    <div class="row mb-2">
-      <div class="col-sm-10">
-        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Disciplina</label>
-        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" [value]="professorSelecionado.disciplina" placeholder="Digite a disciplia do professor">
+      
+      <div class="row mb-2">
+        <div class="col-sm-10">
+          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Disciplina</label>
+          <input type="text" class="form-control form-control-sm" formControlName="disciplina" placeholder="Digite a disciplia do professor">
+        </div>
       </div>
-    </div>
-    
-    <button class="btn btn-success">Enviar</button>
+      
+      <button class="btn btn-primary" [disabled]="!professorForm.valid">Enviar</button>
+      <button class="btn btn-danger" (click)="voltar()" style="margin-left: 10px;">Voltar</button>
+  </form>
   </div>
+  
   
   <div [ngClass]="{'col-sm-6': professorSelecionado, 'col-sm-12': !professorSelecionado}">
     <app-titulo [titulo] = 'titulo'></app-titulo>
@@ -31,16 +32,24 @@
       <table class="table table-hover">
         <thead>
           <tr>
+            <th scope="col">Visualizar</th>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Disciplina</th>
+            <th scope="col">Opções</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor = 'let professor of professores' style="cursor:pointer" (click)="professorSelected(professor)">
+          <tr *ngFor = 'let professor of professores'>
+            <td><button (click)="professorSelected(professor)" class="btn btn-sm btn-outline-warning">Detalhe</button></td>
             <th scope="row">{{professor.id}}</th>
             <td>{{professor.nome}}</td>
             <td>{{professor.disciplina}}</td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Alunos</button>
+              </div>
+            </td>  
           </tr>
         </tbody>
       </table>
@@ -48,3 +57,14 @@
     
   </div>
 </div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h1>AAAAAAAAAAAAAA</h1>
+  </div>
+</ng-template>

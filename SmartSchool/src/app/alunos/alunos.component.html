@@ -2,9 +2,7 @@
 
 <div class="col-sm-6" *ngIf="alunoSelecionado">
   <div class="row">
-    <div class="col-sm-9"><app-titulo [titulo] = "'Código:' + alunoSelecionado.id"></app-titulo></div>
-    <br>
-    <div class="col-sm-1"><button class="btn btn-danger" (click)="voltar()">Voltar</button></div>
+    <div class="col-sm-2"><app-titulo [titulo] = "'Código:' + alunoSelecionado.id"></app-titulo></div>
   </div>
 
     <form [formGroup]="alunoForm" (submit)="alunoSubmit()">
@@ -26,7 +24,8 @@
             <input type="text" class="form-control" formControlName="telefone">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!alunoForm.valid">Enviar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!alunoForm.valid">Enviar</button>
+          <button class="btn btn-danger" (click)="voltar()" style="margin-left: 10px;">Voltar</button>
     </form>
 
   </div>
@@ -39,21 +38,44 @@
       <table class="table table-hover">
         <thead>
           <tr>
+            <th scope="col">Visualizar</th>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Sobrenome</th>
             <th scope="col">Telefone</th>
+            <th scope="col">opções</th>
+          </tr>
         </thead>
         <tbody>
-          <tr *ngFor = 'let aluno of alunos' style="cursor: pointer;" (click)='alunoSelected(aluno)'>
+          <tr *ngFor = 'let aluno of alunos'>
+            <td><button (click)='alunoSelected(aluno)' class="btn btn-sm btn-outline-warning">Detalhe</button></td>
             <th scope="row">{{aluno.id}}</th>
             <td>{{aluno.nome}}</td>
             <td>{{aluno.sobrenome}}</td>
             <td>{{aluno.telefone}}</td>
+            <td>
+              <div class="btn-group">
+                
+                <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Professores</button>
+                <button class="btn btn-sm btn-outline-danger">Desativar</button>
+              </div>
+            </td>  
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-professores></app-professores>
+  </div>
+</ng-template>
 

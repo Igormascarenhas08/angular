@@ -1,8 +1,16 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+// app.config.ts
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+  providers: [
+    provideRouter(routes),
+    importProvidersFrom(
+      BrowserAnimationsModule,
+      ModalModule.forRoot()   
+    )
+  ]
 };

@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TituloComponent } from '../titulo/titulo.component';
 import { Professor } from '../models/professor';
+import { FormBuilder,FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-professores',
   standalone:true,
-  imports: [CommonModule,TituloComponent],
+  imports: [CommonModule,TituloComponent,ReactiveFormsModule],
   templateUrl: './professores.component.html',
   styleUrl: './professores.component.css'
 })
 export class ProfessoresComponent {
-  titulo = 'Lista de Professores'
-  professorSelecionado: Professor | null = null
+  modalRef?: BsModalRef;
+  professorForm!: FormGroup;
+  titulo = 'Lista de Professores';
+  professorSelecionado: Professor | null = null;
 
   professores = [
     {id: 1,nome:'Lauro', disciplina: 'Matemática'},
@@ -24,12 +28,32 @@ export class ProfessoresComponent {
     {id: 7,nome:'João', disciplina: 'Química'}
   ]
 
+  openModal(template: TemplateRef<void>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  constructor(private fb: FormBuilder, private modalService: BsModalService){
+    this.criarForm();
+  }
+
+  criarForm(){
+    this.professorForm = this.fb.group({
+      nome: ['', Validators.required],
+      disciplina: ['', Validators.required]
+    })
+  }
+
   professorSelected(professor: Professor){
     this.professorSelecionado = professor;
+    this.professorForm.patchValue(professor)
   }
 
   voltar(){
     this.professorSelecionado = null;
+  }
+
+  professorSubmit(){
+    console.log(this.professorForm.value)
   }
   
 }
