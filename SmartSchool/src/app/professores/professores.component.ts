@@ -1,6 +1,7 @@
 import { Component, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TituloComponent } from '../titulo/titulo.component';
+import { AlunosComponent } from '../alunos/alunos.component';
 import { Professor } from '../models/professor';
 import { FormBuilder,FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
@@ -8,7 +9,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-professores',
   standalone:true,
-  imports: [CommonModule,TituloComponent,ReactiveFormsModule],
+  imports: [CommonModule,TituloComponent,ReactiveFormsModule, AlunosComponent],
   templateUrl: './professores.component.html',
   styleUrl: './professores.component.css'
 })
