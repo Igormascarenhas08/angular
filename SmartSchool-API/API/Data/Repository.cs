@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -46,6 +47,8 @@ namespace API.Data
 
             return await query.ToArrayAsync();
         }
+
+       
         public async Task<Aluno> GetAlunoAsyncById(int alunoId, bool includeDisciplina)
         {
             IQueryable<Aluno> query = _context.Alunos;
@@ -63,6 +66,7 @@ namespace API.Data
 
             return await query.FirstOrDefaultAsync();
         }
+
         public async Task<Aluno[]> GetAlunosAsyncByDisciplinaId(int disciplinaId, bool includeDisciplina)
         {
             IQueryable<Aluno> query = _context.Alunos;
@@ -78,6 +82,39 @@ namespace API.Data
                          .OrderBy(aluno => aluno.Id)
                          .Where(aluno => aluno.AlunosDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId));
 
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<Aluno[]> GetAlunosFiltradosAsync(int id, string nome, string sobrenome, string telefone)
+        {
+            // Começa com a query básica e vai adicionando os filtros
+            IQueryable<Aluno> query = _context.Alunos.AsNoTracking().OrderBy(a => a.Id);
+
+            if (id.HasValue)
+            {
+                // Filtra pelo ID exato
+                query = query.Where(a => a.Id == id.Value);
+            }
+
+            if (!string.IsNullOrEmpty(nome))
+            {
+                // Filtra pelo nome, usando Contains para buscas parciais
+                query = query.Where(a => a.Nome.Contains(nome));
+            }
+
+            if (!string.IsNullOrEmpty(sobrenome))
+            {
+                // Filtra pelo sobrenome, usando Contains
+                query = query.Where(a => a.Sobrenome.Contains(sobrenome));
+            }
+
+            if (!string.IsNullOrEmpty(telefone))
+            {
+                // Filtra pelo sobrenome, usando Contains
+                query = query.Where(a = a => a.Telefone.Contains(telefone));
+            }
+
+            // A consulta só é executada no final
             return await query.ToArrayAsync();
         }
 

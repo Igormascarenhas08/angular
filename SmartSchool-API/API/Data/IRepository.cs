@@ -17,6 +17,8 @@ namespace API.Data
         Task<Aluno[]> GetAllAlunosAsync(bool includeProfessor);
         Task<Aluno[]> GetAlunosAsyncByDisciplinaId(int disciplinaId, bool includeDisciplina);
         Task<Aluno> GetAlunoAsyncById(int alunoId, bool includeProfessor);
+        Task<IEnumerable<Aluno[]>> GetFiltroAluno(int? id, string nome, string sobrenome, string telefone);
+
 
         //PROFESSOR
         Task<Professor[]> GetAllProfessoresAsync(bool includeAluno);

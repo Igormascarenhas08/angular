@@ -1,29 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\igor.mascarenha\\Desktop\\API\\",
+  "WorkspaceRootPath": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\igor.mascarenha\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\desktop\\api\\api\\controllers\\alunocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\controllers\\alunocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\desktop\\api\\api\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\desktop\\api\\api\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\desktop\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\documents\\github\\angular\\smartschool-api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\desktop\\api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\documents\\github\\angular\\smartschool-api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\igor.mascarenha\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,24 +29,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
-              "RelativeDocumentMoniker": "..\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
               "ToolTip": "C:\\Users\\igor.mascarenha\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
-              "RelativeToolTip": "..\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
+              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-22T19:25:23.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T19:25:23.261Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\appsettings.json",
+              "ToolTip": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\appsettings.json",
               "RelativeToolTip": "API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -67,75 +54,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Program.cs",
+              "ToolTip": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\Program.cs",
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAWwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T19:19:06.466Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "b3b2db17-d07d-449d-afb9-165604254408",
-        "Display": 1,
-        "X": 222,
-        "Y": 102,
-        "Width": 1601,
-        "Height": 935,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Data\\Repository.cs",
-              "RelativeDocumentMoniker": "API\\Data\\Repository.cs",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Data\\Repository.cs",
-              "RelativeToolTip": "API\\Data\\Repository.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAYwE4AAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T12:57:07.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Data\\IRepository.cs",
-              "RelativeDocumentMoniker": "API\\Data\\IRepository.cs",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Data\\IRepository.cs",
-              "RelativeToolTip": "API\\Data\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T12:56:58.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AlunoController.cs",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Controllers\\AlunoController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\AlunoController.cs",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Desktop\\API\\API\\Controllers\\AlunoController.cs",
-              "RelativeToolTip": "API\\Controllers\\AlunoController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAcwF4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T13:01:49.363Z",
               "EditorCaption": ""
             }
           ]

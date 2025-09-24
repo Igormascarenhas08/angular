@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool API\\",
+  "WorkspaceRootPath": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\documents\\github\\angular\\smartschool api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\documents\\github\\angular\\smartschool-api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\documents\\github\\angular\\smartschool-api\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\igor.mascarenha\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|c:\\users\\igor.mascarenha\\documents\\github\\angular\\smartschool api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAA93FA-E9EA-4001-885A-06956E2BE110}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,7 +29,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Desktop\\WebApplicationDotnet\\WebApplicationDotnet\\appsettings.json",
@@ -41,11 +41,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool API\\API\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool API\\API\\appsettings.json",
+              "ToolTip": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\appsettings.json",
               "RelativeToolTip": "API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -54,15 +54,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool API\\API\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool API\\API\\Program.cs",
+              "ToolTip": "C:\\Users\\igor.mascarenha\\Documents\\GitHub\\angular\\SmartSchool-API\\API\\Program.cs",
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAWwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T19:19:06.466Z"
+              "WhenOpened": "2025-09-22T19:19:06.466Z",
+              "EditorCaption": ""
             }
           ]
         }

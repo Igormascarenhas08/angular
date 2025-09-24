@@ -5,7 +5,7 @@ import { TituloComponent } from '../titulo/titulo.component';
 import { ModalProfessorComponent } from '../modal-professor/modal-professor.component';
 // import { ProfessoresComponent } from '../professores/professores.component';
 import { Aluno } from '../models/aluno';
-import {FormBuilder, FormGroup,ReactiveFormsModule, Validators} from '@angular/forms'
+import {Form, FormBuilder, FormGroup,ReactiveFormsModule, Validators} from '@angular/forms'
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { AlunoService } from './aluno.service';
 
@@ -19,6 +19,7 @@ import { AlunoService } from './aluno.service';
 
 export class AlunosComponent {
   alunoForm!: FormGroup;
+  filtroForm!: FormGroup;
   titulo = 'Lista de Alunos';
   alunoSelecionado: Aluno | null = null;
   modalRef?: BsModalRef;
@@ -61,7 +62,6 @@ export class AlunosComponent {
     this.salvarAluno(this.alunoForm.value)
   }
 
-
   openModal(template: TemplateRef<void>) {
     this.modalRef = this.modalService.show(template);
   }
@@ -73,6 +73,29 @@ export class AlunosComponent {
       sobrenome: ['', Validators.required],
       telefone: ['', Validators.required]
     })
+
+    this.filtroForm = this.fb.group({
+      id: [''],
+      nome: [''],
+      sobrenome: [''],
+      telefone: ['']
+    })
+  }
+
+  filtrarAluno() : void{
+    console.log(this.filtroForm.value)
+    const filtros = this.filtroForm.value;
+    this.alunoService.getAlunos(filtros).subscribe(
+      (data) => {
+        this.alunos = data;
+      },
+      (error) => {console.log(error)}
+    )
+  }
+
+  limparFiltro(){
+    this.filtroForm.reset();
+    this.filtrarAluno();
   }
 
   alunoSelected(aluno: Aluno){

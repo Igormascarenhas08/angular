@@ -2,3 +2,7 @@ table{
     width: 80%;
     text-align: center;
 }
+
+.desabilitar{
+    display: none;
+}

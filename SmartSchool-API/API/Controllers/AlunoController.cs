@@ -1,6 +1,7 @@
 ﻿using API.Data;
 using API.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -29,6 +30,31 @@ namespace API.Controllers
             }
 
         }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> GetComFiltro(
+         [FromQuery] int? id,
+         [FromQuery] string nome,
+         [FromQuery] string sobrenome,
+         [FromQuery] string telefone)
+        {
+            try
+            {
+                var result = await _repo.GetAlunosFiltradosAsync(id, nome, sobrenome, telefone);
+
+                if (result == null || result.Length == 0)
+                {
+                    return NotFound("Nenhum aluno encontrado com os filtros fornecidos.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro inesperado: {ex.Message}");
+            }
+        }
+
 
         [HttpGet("{AlunoId}")]
         public async Task<IActionResult> GetByAlunoId(int AlunoId)
@@ -112,9 +138,6 @@ namespace API.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
-
-
-
         }
 
         [HttpDelete("{alunoId}")]
