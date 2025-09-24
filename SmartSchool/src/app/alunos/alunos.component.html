@@ -2,7 +2,7 @@
 
 <div class="col-sm-6" *ngIf="alunoSelecionado">
   <div class="row">
-    <div class="col-sm-2"><app-titulo [titulo] = "'Código:' + alunoSelecionado.id"></app-titulo></div>
+    <div class="col-sm-10"><app-titulo [titulo] = "(alunoSelecionado.id == 0 ? 'Novo Aluno' : 'Código Aluno: ' + alunoSelecionado.id)"></app-titulo></div>
   </div>
 
     <form [formGroup]="alunoForm" (submit)="alunoSubmit()">
@@ -32,7 +32,10 @@
   
   <div [ngClass]="{'col-sm-6': alunoSelecionado, 'col-sm-12': !alunoSelecionado}">
     
-    <app-titulo [titulo] = "titulo"></app-titulo>
+    <div style="display: flex; justify-content: space-between;">
+          <app-titulo [titulo] = 'titulo'></app-titulo>
+          <button class="btn btn-success" (click)="alunoNovo()" style="margin-left: 10px;">Cadastrar Aluno</button>
+    </div>
     
     <div class="area-table">
       <table class="table table-hover">
@@ -57,7 +60,7 @@
               <div class="btn-group">
                 
                 <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Professores</button>
-                <button class="btn btn-sm btn-outline-danger">Desativar</button>
+                <button class="btn btn-sm btn-outline-danger" (click)="alunoDeletar(aluno.id)">Deletar</button>
               </div>
             </td>  
           </tr>
@@ -75,7 +78,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <app-professores></app-professores>
+      <app-modal-professor></app-modal-professor>
   </div>
 </ng-template>
 

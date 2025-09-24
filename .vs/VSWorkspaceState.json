@@ -1,10 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SmartSchool-WebAPI",
-    "\\SmartSchool-WebAPI\\bin",
-    "\\SmartSchool-WebAPI\\Controllers"
+    "\\SmartSchool",
+    "\\SmartSchool API",
+    "\\SmartSchool API\\API",
+    "\\SmartSchool\\src",
+    "\\SmartSchool\\src\\app",
+    "\\SmartSchool\\src\\app\\alunos"
   ],
-  "SelectedNode": "\\SmartSchool-WebAPI\\Controllers",
+  "SelectedNode": "\\SmartSchool\\src\\app\\alunos\\alunos.component.ts",
   "PreviewInSolutionExplorer": false
 }

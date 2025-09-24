@@ -2,40 +2,65 @@
 import { Component,TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TituloComponent } from '../titulo/titulo.component'; 
-import { ProfessoresComponent } from '../professores/professores.component';
+import { ModalProfessorComponent } from '../modal-professor/modal-professor.component';
+// import { ProfessoresComponent } from '../professores/professores.component';
 import { Aluno } from '../models/aluno';
 import {FormBuilder, FormGroup,ReactiveFormsModule, Validators} from '@angular/forms'
-import { BsModalRef, BsModalService, ModalModule } from 'ngx-bootstrap/modal';
-
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { AlunoService } from './aluno.service';
 
 @Component({
   selector: 'app-alunos',
   standalone:true,
-  imports: [CommonModule, TituloComponent, ReactiveFormsModule, ModalModule, ProfessoresComponent],
+  imports: [CommonModule,TituloComponent,ReactiveFormsModule,ModalProfessorComponent],
   templateUrl: './alunos.component.html',
   styleUrl: './alunos.component.css'
 })
+
 export class AlunosComponent {
   alunoForm!: FormGroup;
-  titulo = 'Lista de Alunos'
+  titulo = 'Lista de Alunos';
   alunoSelecionado: Aluno | null = null;
-  textSimple: string = ''
   modalRef?: BsModalRef;
+  modo: 'post' | 'put' | undefined;
 
-  alunos = [
-    {id: 1, nome:'Marta', sobrenome: 'Kent', telefone:'33225543'},
-    {id: 2, nome:'Paula', sobrenome: 'Isabela', telefone: '3325432'},
-    {id: 3, nome:'Laura', sobrenome: 'Antonia', telefone: '36734255'},
-    {id: 4, nome:'Luiza', sobrenome: 'Maria', telefone: '7672255'},
-    {id: 5, nome:'Lucas', sobrenome: 'Machado', telefone: '87832255'},
-    {id: 6, nome:'Pedro', sobrenome: 'Alves', telefone: '9832255'},
-    {id: 7, nome:'Paulo', sobrenome: 'José', telefone: '87832255'}
+  public alunos: Aluno[] | undefined;
 
-  ];
-
-  constructor(private fb: FormBuilder, private modalService: BsModalService){
+  constructor(private fb: FormBuilder, private modalService: BsModalService, private alunoService: AlunoService){
     this.criarForm()
   }
+
+  ngOnInit(){
+    this.carregarAlunos();
+  }
+
+  carregarAlunos(){
+    this.alunoService.getAll().subscribe(
+      (alunos: Aluno[]) => {
+        this.alunos = alunos;
+      },
+      (erro: any) => {console.error(erro)}
+    );
+  };
+
+  salvarAluno(aluno : Aluno){
+      const operacao = aluno.id === 0
+    ? this.alunoService.post(aluno)
+    : this.alunoService.put(aluno);
+
+    operacao.subscribe(
+      (aluno : Aluno) => {
+        console.log(aluno) 
+        this.carregarAlunos();
+      },
+      (error:any) => {console.log(error)}
+    )
+  }
+
+  alunoSubmit(){
+    this.salvarAluno(this.alunoForm.value)
+  }
+
 
   openModal(template: TemplateRef<void>) {
     this.modalRef = this.modalService.show(template);
@@ -43,6 +68,7 @@ export class AlunosComponent {
 
   criarForm(){
     this.alunoForm = this.fb.group({
+      id: ['', Validators.required],
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],
       telefone: ['', Validators.required]
@@ -54,12 +80,23 @@ export class AlunosComponent {
     this.alunoForm.patchValue(aluno)
   }
 
+  alunoNovo(){
+    this.alunoSelecionado = new Aluno();
+    this.alunoForm.patchValue(this.alunoSelecionado)
+  }
+
+  alunoDeletar(id : number){
+    this.alunoService.delete(id).subscribe(
+      (model : any) => {
+        console.log(model);
+        this.carregarAlunos()
+      },
+      (error:any) => {console.log(error)}
+    )
+
+  }
+
   voltar(){
     this.alunoSelecionado = null;
   }
-
-  alunoSubmit(){
-    console.log(this.alunoForm.value);
-  }
-
 }
